@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Wilson Lazy Loading</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="container">
+		  <h1 class="display-3">Wilson Lazy Loading</h1>
+		  <p class="lead">Ayuda a Wilson a maximizar el n&uacute;mero de viajes para colocar todos los elementos en
+		  el cami&oacute;n, evitando que Julie lo reprenda por llevar menos de 50 libras en la bolsa.</p>
+		  <button type="button" class="btn btn-info btn-md" id="testCases"
+		  	data-toggle="modal" data-target="#myModal">Ver los casos de prueba	</button>
+	  	</div>
+	</div>
+	
+	<div class="container">
+		<div id="results"></div>
+	</div>
+
+	<div class="container">
+		<form method="POST" enctype="multipart/form-data" id="fileUploadForm" class="form-horizontal" >
+			<fieldset>
+				<legend>Ingrese el ID y seleccione el archivo con los datos:</legend>
+				<span class="error text-danger" id="msgError" hidden="true">Debe ingresar los campos obligatorios.</span>
+				<div class="form-group row" id="inputid-group">
+					<label for="inputid" class="col-sm-4 col-form-label">Identificaci&oacute;n del participante</label>
+					<div class="col-sm-6">
+						<input type="text" name="id" id="inputid" class="form-control" required />
+					</div>
+				</div>
+				<div class="form-group row" id="inputfile-group">
+					<label for="inputfile" class="col-sm-4 col-form-label">Archivo de prueba</label>
+					<div class="col-sm-6">
+						<input type="file" name="fileToUpload" id="inputfile" class="form-control" required/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="offset-sm-12 col-sm-5">
+						<input type="submit" value="Submit" id="submitFile" class="btn btn-primary pull-right"/>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	
+	<div class="content">
+		<div id="resultsTable">
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog">
+	
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Casos de prueba Lazy Loading</h4>
+	      </div>
+	      <div class="modal-body" id="testCasesResults">
+	        
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	
+	  </div>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/LazyLoadingApp.js"></script>
+</body>
+</html>
